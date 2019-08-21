@@ -3,3 +3,6 @@ venv
 .env
 *.pyc
 .vscode
+*.png
+static/
+media/

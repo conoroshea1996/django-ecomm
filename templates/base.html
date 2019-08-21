@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <!-- Style sheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -32,13 +34,14 @@
 <body>
 
     <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
+        <div class="navbar-brand">Ecommrce</div>
+        <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-            <li><a href="{% url 'profile' %}">Profile</a></li>
-            <li><a href="{% url 'logout' %}">Log out</a></li>
+            <li><a href="{% url 'profile' %}"> <i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="{% url 'logout' %}"> <i class="fa fa-sign-out"></i> Log out</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'registration' %}">Register</a></li>
+            <li><a href="{% url 'login' %}"> <i class="fa fa-sign-in"></i> Log in</a></li>
+            <li><a href="{% url 'registration' %}"> <i class="fa fa-user-plus"></i> Register</a></li>
             {% endif %}
             <li><a href="{% url 'view_cart'%}">
                     <i class="fa fa-shopping-cart"></i> Cart
